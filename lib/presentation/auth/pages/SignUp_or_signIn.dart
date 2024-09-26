@@ -6,6 +6,7 @@ import 'package:musicplayer/common/widgets/button/basic_app_button.dart';
 import 'package:musicplayer/core/configs/assets/app_images.dart';
 import 'package:musicplayer/core/configs/assets/app_vectors.dart';
 import 'package:musicplayer/core/configs/theme/app_colors.dart';
+import 'package:musicplayer/presentation/auth/pages/signup.dart';
 
 class Signuporsignin extends StatelessWidget {
   const Signuporsignin({super.key});
@@ -62,7 +63,15 @@ class Signuporsignin extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: BasicAppButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    const SignupPage(),
+                              ),
+                            );
+                          },
                           title: "Register",
                         ),
                       ),
