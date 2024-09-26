@@ -1,9 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:musicplayer/common/widgets/button/basic_app_button.dart';
 import 'package:musicplayer/core/configs/assets/app_images.dart';
 import 'package:musicplayer/core/configs/assets/app_vectors.dart';
+import 'package:musicplayer/core/configs/theme/app_colors.dart';
 
 class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});
@@ -48,53 +49,91 @@ class ChooseModePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
+                // Row for the icons and their respective text
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ClipOval(
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          decoration: BoxDecoration(
-                            color: Color(0xff30393C).withOpacity(0.5),
-                            shape: BoxShape.circle,
-                          ),
-                          child: SvgPicture.asset(AppVectors.sun,
-                              fit: BoxFit.none),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 40),
-                    ClipOval(
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                        child: Container(
-                            height: 80,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              color: Color(0xff30393C).withOpacity(0.5),
-                              shape: BoxShape.circle,
+                    // Dark Mode Icon and Text
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                color: const Color(0xff30393C).withOpacity(0.5),
+                                shape: BoxShape.circle,
+                              ),
+                              child: SvgPicture.asset(
+                                AppVectors.moon,
+                                fit: BoxFit.none,
+                              ),
                             ),
-                            child: SvgPicture.asset(
-                              AppVectors.moon,
-                              fit: BoxFit.none,
-                            )),
-                      ),
+                          ),
+                        ),
+                        const SizedBox(
+                            height: 10), // Space between icon and text
+                        const Text(
+                          "Dark Mode",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17,
+                            color: AppColors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(width: 60), // Space between the two icons
+
+                    // Light Mode Icon and Text
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                color: const Color(0xff30393C).withOpacity(0.5),
+                                shape: BoxShape.circle,
+                              ),
+                              child: SvgPicture.asset(
+                                AppVectors.sun,
+                                fit: BoxFit.none,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                            height: 10), // Space between icon and text
+                        const Text(
+                          "Light Mode",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17,
+                            color: AppColors.grey,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-                const Text(
-                  "Hello Sandip! Can you tell me the level of your intrest towards the flutter",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    color: Color.fromARGB(96, 190, 190, 190),
-                    fontSize: 15,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
                 const SizedBox(height: 20),
+                BasicAppButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const ChooseModePage(),
+                      ),
+                    );
+                  },
+                  title: 'Continue',
+                ),
               ],
             ),
           )
