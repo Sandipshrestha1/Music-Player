@@ -100,6 +100,7 @@ class ChooseModePage extends StatelessWidget {
 
                     // Light Mode Icon and Text
                     Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
                           onTap: () {
