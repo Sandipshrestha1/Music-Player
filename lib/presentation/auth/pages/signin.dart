@@ -78,7 +78,7 @@ class SignIn extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            "Don't have an account? ",
+            "Not A Member? ",
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 14,
@@ -86,14 +86,14 @@ class SignIn extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) => SignupPage(),
                 ),
               );
             },
-            child: const Text("Register Account"),
+            child: const Text("Register Now"),
           ),
         ],
       ),
