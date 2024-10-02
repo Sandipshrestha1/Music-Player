@@ -19,22 +19,24 @@ class SignIn extends StatelessWidget {
           width: 35,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 50,
-          horizontal: 30,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _signInText(),
-            const SizedBox(height: 50),
-            _emailNameField(context),
-            const SizedBox(height: 20),
-            _passwordField(context),
-            const SizedBox(height: 20),
-            BasicAppButton(onPressed: () {}, title: "Sign In"),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 50,
+            horizontal: 30,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _signInText(),
+              const SizedBox(height: 50),
+              _emailNameField(context),
+              const SizedBox(height: 20),
+              _passwordField(context),
+              const SizedBox(height: 20),
+              BasicAppButton(onPressed: () {}, title: "Sign In"),
+            ],
+          ),
         ),
       ),
     );
