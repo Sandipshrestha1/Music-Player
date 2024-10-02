@@ -26,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
         //     Image.asset(
         //   "/home/developer/flutter/musicplayer/assets/vectors/spotify_logo.svg",
         //   fit: BoxFit.cover,
-        // ),
+        //  ),
       ),
     );
   }
@@ -37,6 +37,7 @@ class _SplashPageState extends State<SplashPage> {
     );
 
     Navigator.pushReplacement(
+      // ignore: use_build_context_synchronously
       context,
       MaterialPageRoute(
         builder: (BuildContext context) => const GetStartedPage(),
