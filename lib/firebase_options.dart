@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'musicplayer-78ab8.appspot.com',
     measurementId: 'G-ZQ31KCG566',
   );
+
 }
