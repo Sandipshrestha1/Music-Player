@@ -94,7 +94,7 @@ class Signuporsignin extends StatelessWidget {
                               fontSize: 16,
                               color: context.isDarkMode
                                   ? Colors.white
-                                  : Colors.black,
+                                  : Colors.green,
                             ),
                           ),
                         ),
